@@ -16,8 +16,19 @@ public class DesignPatterns {
     /**
      * @param args the command line arguments
      */
+    
+    public void buildPattern(){
+        
+        System.out.println("***** Builder Pattern *****");
+        Motorcycle motorcycleHonda = new Motorcycle.Builder("kawasaky", "enduro").build();
+        //motorcycleHonda.toString();
+        System.out.println("Moto:" +motorcycleHonda);
+    }
+    
     public static void main(String[] args) {
         // TODO code application logic here
+        
+        DesignPatterns designPatterns = new DesignPatterns();
         
         //Factory Pattern
         Computer pc = ComputerFactory.getComputer("PORTATIL", "16gb", "1tb", "256");
@@ -60,6 +71,14 @@ public class DesignPatterns {
         
         System.out.println("Profesores Ingenieria: "+ingeneria.getListaProfesores());
         System.out.println("Profesores Economia: "+economia.getListaProfesores());
+        
+        
+        
+
+        //Builder Pattern
+        designPatterns.buildPattern();
+                
+        
         
         
         
