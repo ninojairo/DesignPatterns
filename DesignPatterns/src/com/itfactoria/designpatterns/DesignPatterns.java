@@ -5,6 +5,9 @@
  */
 package com.itfactoria.designpatterns;
 
+import com.itfactoria.decorator.Beverage;
+import com.itfactoria.decorator.Sugar;
+import com.itfactoria.decorator.Milk;
 import java.util.ArrayList;
 
 /**
@@ -25,12 +28,21 @@ public class DesignPatterns {
         System.out.println("Moto:" +motorcycleHonda);
     }
     
+    public void decoratorPattern(){
+        Beverage coffee = new Sugar(new Milk(new PlainBeverage()));
+        System.out.println("*** Description: " +coffee.getDescription() + "  Price: " + coffee.getCost());
+        
+    }
+    
+    
+    
     public static void main(String[] args) {
         // TODO code application logic here
         
         DesignPatterns designPatterns = new DesignPatterns();
         
         //Factory Pattern
+        /*
         Computer pc = ComputerFactory.getComputer("PORTATIL", "16gb", "1tb", "256");
         Computer server  = ComputerFactory.getComputer("SERVER", "16gb", "1tb", "256");
         System.out.println("Factory PORTATIL Config: " +pc);
@@ -71,12 +83,16 @@ public class DesignPatterns {
         
         System.out.println("Profesores Ingenieria: "+ingeneria.getListaProfesores());
         System.out.println("Profesores Economia: "+economia.getListaProfesores());
-        
+        */
         
         
 
         //Builder Pattern
-        designPatterns.buildPattern();
+        //designPatterns.buildPattern();
+        
+        //Decorator Pattern
+        designPatterns.decoratorPattern();
+        
                 
         
         
